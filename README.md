@@ -14,10 +14,14 @@ An audio control and patch-routing tool for the Donner Livejack on Windows. It u
 [Elgato Wave Link Driver](https://www.elgato.com/us/en/s/wave-link-app) to provide virtual audio devices
 and interfaces, adding virtual outputs and patch routing to the sound card.
 
-<p align="center"><strong>Routing matrix</strong></p>
-<p align="center">
-  <a href="assets/readme/routing-matrix.jpg"><img src="assets/readme/routing-matrix.jpg" alt="DonnerLive routing matrix with per-send gain" width="100%"></a>
-</p>
+<table>
+  <tr>
+    <td width="100%" align="center"><strong>Routing</strong></td>
+  </tr>
+  <tr>
+    <td><a href="assets/readme/routing-matrix.jpg"><img src="assets/readme/routing-matrix.jpg" alt="DonnerLive audio routing" width="100%"></a></td>
+  </tr>
+</table>
 
 <table>
   <tr>

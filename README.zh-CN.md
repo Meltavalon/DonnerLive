@@ -12,10 +12,14 @@
 
 Windows 上的 Donner Livejack 声卡控制与跳线路由工具。借由 [Elgato Wave Link Driver](https://www.elgato.com/us/en/s/wave-link-app) 提供虚拟音频设备及接口, 补齐声卡的虚拟输出,跳线功能。
 
-<p align="center"><strong>路由矩阵</strong></p>
-<p align="center">
-  <a href="assets/readme/routing-matrix.jpg"><img src="assets/readme/routing-matrix.jpg" alt="DonnerLive 路由矩阵与逐发送增益" width="100%"></a>
-</p>
+<table>
+  <tr>
+    <td width="100%" align="center"><strong>路由</strong></td>
+  </tr>
+  <tr>
+    <td><a href="assets/readme/routing-matrix.jpg"><img src="assets/readme/routing-matrix.jpg" alt="DonnerLive 音频路由" width="100%"></a></td>
+  </tr>
+</table>
 
 <table>
   <tr>
