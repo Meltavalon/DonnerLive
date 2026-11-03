@@ -1,0 +1,22 @@
+# Build products, logs, user configuration, and dependency caches.
+/build/
+/logs/
+/config/
+
+# Editor and compiler state.
+/.vs/
+/.vscode/
+*.user
+*.suo
+*.obj
+*.pdb
+*.ilk
+*.publish.tmp
+__pycache__/
+
+# Local credentials and agent state.
+/.aws/
+/.codex/
+/.agents/
+.env
+.env.*
