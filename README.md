@@ -16,7 +16,7 @@ and interfaces, adding virtual outputs and patch routing to the sound card.
 
 <p align="center"><strong>Routing matrix</strong></p>
 <p align="center">
-  <a href="assets/readme/routing-matrix.png"><img src="assets/readme/routing-matrix.png" alt="DonnerLive routing matrix with per-send gain" width="100%"></a>
+  <a href="assets/readme/routing-matrix.jpg"><img src="assets/readme/routing-matrix.jpg" alt="DonnerLive routing matrix with per-send gain" width="100%"></a>
 </p>
 
 <table>
@@ -25,8 +25,8 @@ and interfaces, adding virtual outputs and patch routing to the sound card.
     <td width="50%" align="center"><strong>Sound card controls</strong></td>
   </tr>
   <tr>
-    <td><a href="assets/readme/virtual-devices.png"><img src="assets/readme/virtual-devices.png" alt="Virtual playback and recording endpoints" width="100%"></a></td>
-    <td><a href="assets/readme/sound-card.png"><img src="assets/readme/sound-card.png" alt="Sample rate, buffer size, and sound card volume controls" width="100%"></a></td>
+    <td><a href="assets/readme/virtual-devices.jpg"><img src="assets/readme/virtual-devices.jpg" alt="Virtual playback and recording endpoints" width="100%"></a></td>
+    <td><a href="assets/readme/sound-card.jpg"><img src="assets/readme/sound-card.jpg" alt="Sample rate, buffer size, and sound card volume controls" width="100%"></a></td>
   </tr>
 </table>
 

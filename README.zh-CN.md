@@ -14,7 +14,7 @@ Windows 上的 Donner Livejack 声卡控制与跳线路由工具。借由 [Elgat
 
 <p align="center"><strong>路由矩阵</strong></p>
 <p align="center">
-  <a href="assets/readme/routing-matrix.png"><img src="assets/readme/routing-matrix.png" alt="DonnerLive 路由矩阵与逐发送增益" width="100%"></a>
+  <a href="assets/readme/routing-matrix.jpg"><img src="assets/readme/routing-matrix.jpg" alt="DonnerLive 路由矩阵与逐发送增益" width="100%"></a>
 </p>
 
 <table>
@@ -23,8 +23,8 @@ Windows 上的 Donner Livejack 声卡控制与跳线路由工具。借由 [Elgat
     <td width="50%" align="center"><strong>声卡控制</strong></td>
   </tr>
   <tr>
-    <td><a href="assets/readme/virtual-devices.png"><img src="assets/readme/virtual-devices.png" alt="虚拟播放与录音端点管理" width="100%"></a></td>
-    <td><a href="assets/readme/sound-card.png"><img src="assets/readme/sound-card.png" alt="采样率、缓冲区与声卡数字音量控制" width="100%"></a></td>
+    <td><a href="assets/readme/virtual-devices.jpg"><img src="assets/readme/virtual-devices.jpg" alt="虚拟播放与录音端点管理" width="100%"></a></td>
+    <td><a href="assets/readme/sound-card.jpg"><img src="assets/readme/sound-card.jpg" alt="采样率、缓冲区与声卡数字音量控制" width="100%"></a></td>
   </tr>
 </table>
 
