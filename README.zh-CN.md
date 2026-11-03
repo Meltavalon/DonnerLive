@@ -1,8 +1,32 @@
-# DonnerLive
+<p align="center">
+  <img src="assets/readme/cover.png" alt="DonnerLive — 声卡控制与跳线路由" width="100%">
+</p>
 
-[English](README.md) | 简体中文
+<p align="center">
+  <a href="README.md">English</a> · 简体中文
+</p>
+
+<p align="center">
+  <a href="https://github.com/Meltavalon/DonnerLive/releases/latest"><strong>下载 Windows x64 安装版</strong></a>
+</p>
 
 Windows 上的 Donner Livejack 声卡控制与跳线路由工具。借由 [Elgato Wave Link Driver](https://www.elgato.com/us/en/s/wave-link-app) 提供虚拟音频设备及接口, 补齐声卡的虚拟输出,跳线功能。
+
+<p align="center"><strong>路由矩阵</strong></p>
+<p align="center">
+  <a href="assets/readme/routing-matrix.png"><img src="assets/readme/routing-matrix.png" alt="DonnerLive 路由矩阵与逐发送增益" width="100%"></a>
+</p>
+
+<table>
+  <tr>
+    <td width="50%" align="center"><strong>虚拟设备</strong></td>
+    <td width="50%" align="center"><strong>声卡控制</strong></td>
+  </tr>
+  <tr>
+    <td><a href="assets/readme/virtual-devices.png"><img src="assets/readme/virtual-devices.png" alt="虚拟播放与录音端点管理" width="100%"></a></td>
+    <td><a href="assets/readme/sound-card.png"><img src="assets/readme/sound-card.png" alt="采样率、缓冲区与声卡数字音量控制" width="100%"></a></td>
+  </tr>
+</table>
 
 ## 功能
 
@@ -65,6 +89,7 @@ make setup
 
 ```text
 DonnerLive/
+├── assets/readme/                         扉页图与程序实机截图
 ├── src/
 │   ├── asio/
 │   │   ├── driver.hpp / driver.cpp       ASIO 接口与宿主回调

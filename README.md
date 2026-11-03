@@ -1,10 +1,34 @@
-# DonnerLive
+<p align="center">
+  <img src="assets/readme/cover.png" alt="DonnerLive — Audio control &amp; patch routing" width="100%">
+</p>
 
-English | [简体中文](README.zh-CN.md)
+<p align="center">
+  English · <a href="README.zh-CN.md">简体中文</a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/Meltavalon/DonnerLive/releases/latest"><strong>Download for Windows x64</strong></a>
+</p>
 
 An audio control and patch-routing tool for the Donner Livejack on Windows. It uses the
 [Elgato Wave Link Driver](https://www.elgato.com/us/en/s/wave-link-app) to provide virtual audio devices
 and interfaces, adding virtual outputs and patch routing to the sound card.
+
+<p align="center"><strong>Routing matrix</strong></p>
+<p align="center">
+  <a href="assets/readme/routing-matrix.png"><img src="assets/readme/routing-matrix.png" alt="DonnerLive routing matrix with per-send gain" width="100%"></a>
+</p>
+
+<table>
+  <tr>
+    <td width="50%" align="center"><strong>Virtual devices</strong></td>
+    <td width="50%" align="center"><strong>Sound card controls</strong></td>
+  </tr>
+  <tr>
+    <td><a href="assets/readme/virtual-devices.png"><img src="assets/readme/virtual-devices.png" alt="Virtual playback and recording endpoints" width="100%"></a></td>
+    <td><a href="assets/readme/sound-card.png"><img src="assets/readme/sound-card.png" alt="Sample rate, buffer size, and sound card volume controls" width="100%"></a></td>
+  </tr>
+</table>
 
 ## Features
 
@@ -69,6 +93,7 @@ Upload the Setup file to Releases. The entire `build/` directory is excluded fro
 
 ```text
 DonnerLive/
+├── assets/readme/                         Cover artwork and application screenshots
 ├── src/
 │   ├── asio/
 │   │   ├── driver.hpp / driver.cpp       ASIO interface and host callbacks
