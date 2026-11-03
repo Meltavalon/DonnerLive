@@ -65,26 +65,10 @@ This command builds all components, then generates `build/installer/DonnerLive-1
 The installer includes the application, ASIO DLL, and third-party license notices, and creates Start menu shortcuts.
 Upload the Setup file to Releases. The entire `build/` directory is excluded from version control.
 
-## Automated Releases
-
-GitHub Actions builds the Windows x64 Setup installer and publishes it to Releases when a version tag is pushed.
-Update `project(DonnerLive VERSION ...)` in `CMakeLists.txt`, commit and push the change to `master`, then push the matching tag:
-
-```sh
-git tag v1.0.0
-git push origin v1.0.0
-```
-
-Replace `v1.0.0` with the new version. The tag must match the CMake version exactly.
-The workflow uses `make setup` and uploads only the Setup installer. It does not commit build outputs.
-To retry a failed build, rerun it under **Actions → Release**, or choose **Run workflow** and enter the existing tag.
-Release publishing uses GitHub's automatic `GITHUB_TOKEN`; no additional repository secrets are needed.
-
 ## Project Structure
 
 ```text
 DonnerLive/
-├── .github/workflows/release.yml          Automatic Setup build and release publishing
 ├── src/
 │   ├── asio/
 │   │   ├── driver.hpp / driver.cpp       ASIO interface and host callbacks
