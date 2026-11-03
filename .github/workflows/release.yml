@@ -1,0 +1,66 @@
+# SPDX-License-Identifier: AGPL-3.0-only
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Existing version tag (for example, v1.0.0)'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ inputs.tag || github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: windows-2022
+    timeout-minutes: 30
+    defaults:
+      run:
+        shell: pwsh
+    env:
+      RELEASE_TAG: ${{ inputs.tag || github.ref_name }}
+    steps:
+      - name: Check out the version tag
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: refs/tags/${{ env.RELEASE_TAG }}
+          persist-credentials: false
+
+      - name: Read the release version
+        run: |
+          $project = Get-Content CMakeLists.txt -Raw
+          $version = [regex]::Match($project, 'project\(DonnerLive VERSION (\d+\.\d+\.\d+)').Groups[1].Value
+          if (-not $version -or $env:RELEASE_TAG -ne "v$version") {
+            throw 'The tag must match the CMake project version (vX.Y.Z).'
+          }
+          "SETUP_FILE=build/installer/DonnerLive-$version-Setup-x64.exe" >> $env:GITHUB_ENV
+
+      - name: Install GNU Make
+        run: choco install make --yes --no-progress
+
+      - name: Build the ASIO driver, engine, GUI, and Setup
+        shell: cmd
+        run: |
+          for /f "usebackq tokens=*" %%i in (`"%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -latest -products * -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath`) do call "%%i\VC\Auxiliary\Build\vcvars64.bat"
+          if errorlevel 1 exit /b 1
+          make setup
+
+      - name: Publish the installer
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          if (-not (Test-Path -LiteralPath $env:SETUP_FILE)) {
+            throw 'The Setup installer was not generated.'
+          }
+          gh release create $env:RELEASE_TAG $env:SETUP_FILE --verify-tag --generate-notes --title "DonnerLive $env:RELEASE_TAG"
+          if ($LASTEXITCODE -ne 0) { throw 'Release publication failed.' }

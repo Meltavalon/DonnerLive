@@ -61,10 +61,26 @@ make setup
 安装程序包含应用、ASIO DLL 和第三方许可声明，并创建开始菜单入口。
 上传该 Setup 文件到 Release 即可；整个 `build/` 已排除在版本控制之外。
 
+## 自动发布
+
+推送版本标签后，GitHub Actions 会自动构建 Windows x64 Setup 安装程序并发布到 Release。
+先更新 `CMakeLists.txt` 中的 `project(DonnerLive VERSION ...)` 版本号，将修改提交并推送到 `master`，再推送对应标签：
+
+```sh
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+将 `v1.0.0` 替换为新版本号，标签必须与 CMake 版本完全一致。
+工作流使用 `make setup`，只上传 Setup 安装程序，不提交构建产物。
+构建失败时，可在 **Actions → Release** 中重新运行，或选择 **Run workflow** 并输入已有标签。
+发布使用 GitHub 自动提供的 `GITHUB_TOKEN`，无需额外设置仓库密钥。
+
 ## 项目结构
 
 ```text
 DonnerLive/
+├── .github/workflows/release.yml          自动构建 Setup 并发布 Release
 ├── src/
 │   ├── asio/
 │   │   ├── driver.hpp / driver.cpp       ASIO 接口与宿主回调
